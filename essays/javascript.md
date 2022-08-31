@@ -1,7 +1,7 @@
 ---
 layout: essay
 type: essay
-title: "Learning Javascript and Athletic Software Engineering"
+title: "Learning Javascript and Athletic Software Engineerin"
 # All dates must be YYYY-MM-DD format!
 date: 2022-08-31
 published: true
