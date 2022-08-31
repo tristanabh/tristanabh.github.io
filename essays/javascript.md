@@ -18,7 +18,7 @@ labels:
 
 Up to this point most of my experience in programming has been in Java and a little bit of Python and C++. As such, my frame of reference for learning Javascript has been mostly with respect to Java. What sticks out to me the most in the short time that I've been learning Javascript (about a week) is how "simple" it feels. I'm calling it "simple" because I don't know that have learned enough or have had enough experience with the language yet to be able to formulate a better word. This simplicity, as I have found so far, isn't necessarily a characteristic I have enjoyed about the language.
 
-<img width="200px" src="189aa059.png">
+<img width="200px" src="../img/javascript.png">
 
 For example, take a function definition. In Java, the type of each parameter that the function takes must be specified, as well as the type that is returned.
 
