@@ -1,7 +1,7 @@
 ---
 layout: essay
 type: essay
-title: "Smart Questions, Good Answers"
+title: "How to Ask Smart Questions"
 # All dates must be YYYY-MM-DD format!
 date: 2015-09-08
 published: true
@@ -11,89 +11,94 @@ labels:
   - StackOverflow
 ---
 
-<img width="300px" class="rounded float-start pe-4" src="../img/smart-questions/rtfm.png">
+Asking questions can be very important when learning something new. Just asking questions without much thought, however, is usually not the best way to improve your understanding of the problem. It's important to know how to formulate your question so as to get the best possible answer that will not only help you solve your current problem, but hopefully give you the knowledge to deepen your understanding of the material as a whole. In programming, what I have found is that when I'm stuck on a problem or if my code isn't working, knowing exactly what I'm trying to do and recognizing what my program is currently doing is very important when trying to resolve problems. To ask an effective question, you have to try to understand exactly what is going wrong in your programming or your thinking, so that you or the person answering the question can isolate the gap in your knowledge.
 
-## Is there such thing as a stupid question?
+## Example of a Smart Question
 
-I’ve had instructors address a whole class and say, “There’s no such thing as a stupid question.” I now know that is in fact not true because I’ve challenged the statement and received the appropriate dumb-stricken, annoyed look. There are definitely stupid questions, and along with that, usually unhelpful answers. Though we all might be guilty of being callous and making people victim to our poorly formed questions, there are steps we can take to ask smarter questions that hopefully don’t illicit the dreaded “rtfm” or “stfw” response.
+#### *"How to print in C"*
 
-## What’s a smart question?
+This question was asked on [StackOverflow](https://stackoverflow.com/questions/2162758/how-to-print-in-c) and the person who asked this question also provided the context that they are a beginner to C and also stated how they would have done it in Java. They provided their own code that they have been working on.
 
-Stack Overflow, a question and answer site for programmers, is a great resource for anyone who may have issues with code or who may simply want to learn new or different methods of doing something. There I found examples of good questions and bad questions, which could probably be improved.
+```C
+#include <stdio.h>
 
-In the following example, we examine the components of a decent question. In this case, the asker is trying to figure out a way to get the date of the previous month in Python.
+int addNumbers(int a, int b)
+{
+    int sum = a + b;
+    return sum;
+}
 
+int main(void)
+{
+    int a = 4;
+    int b = 7;
+
+    printf(addNumbers(a,b));
+    return 0;
+}
 ```
-Q: python date of the previous month
 
-I am trying to get the date of the previous month with python. Here is what i've tried:
+This is a smart question because it is explicit and precise. Since they have provided their attempt, anyone who goes to answer their question knows exactly what the question asker is trying to do. One of the answers to this question provided a very good summary of the printf() function in C and how to use it, providing examples of each conversion specifier. A snippet of their response was:
 
-str( time.strftime('%Y') ) + str( int(time.strftime('%m'))-1 )
+---
+*"For signed decimal integer output, use either the "%d" or "%i" conversion specifiers, such as"*
 
-However, this way is bad for 2 reasons: First it returns 20122 for the February of 2012 (instead of 201202) 
-and secondly it will return 0 instead of 12 on January.
+```C
+printf("%d\n", addNumber(a,b));
+```
+*"You can mix regular text with conversion specifiers, like so:"*
+```C
+printf("The result of addNumber(%d, %d) is %d\n", a, b, addNumber(a,b));
+```
+---
 
-I have solved this trouble in bash with:
+Another answer also provided documentation for the printf() function. These are useful answers because not only have they answered the original question, they have also helped the question asker alleviate potential problems down the road.
 
-echo $(date -d"3 month ago" "+%G%m%d")
+## Example of a Not Smart Question
 
-I think that if bash has a built-in way for this purpose, then python, much more equipped, should provide something 
-better than forcing writing one's own script to achieve this goal. Of course i could do something like:
+#### *"i tried adding a figure to my empty array using push"*
 
-if int(time.strftime('%m')) == 1:
-    return '12'
-else:
-    if int(time.strftime('%m')) < 10:
-        return '0'+str(time.strftime('%m')-1)
-    else:
-        return str(time.strftime('%m') -1)
+The first think to note about this post from [StackOverflow](https://stackoverflow.com/questions/73651500/i-tried-adding-a-figure-to-my-empty-array-using-push) is that it ins't even a question but rather a plainly stated attempt of something that they tried to do. Because of this, it isn't really clear what the question asker is trying to do. They did provide a code snippet of what they did, 
+
+```javascript
+var giv = []
+    var mes = (2, 3);
+    function outPut () {
+    output.push(2,3); 
         
-I have not tested this code and i don't want to use it anyway (unless I can't find any other way:/)
-
-Thanks for your help!
+    }
+    alert(output);
 ```
 
-While the heading of his question could be better, it does convey what he’s trying to figure out. Usually something as brief as “python date of previous month” is what other users would enter in as search terms on Google, making it easily found. Another good thing about the question is that it’s not just a question. The asker shows what he or she has done and that he or she has put in some effort to answer the question. And while it may not be as important as the question itself, the asker shows courtesy, which does increase the chance of getting an answer.
+but from the code it is clear that the title of the post is somewhat misleading because they said figure when they meant variable. It is important to be precise and use correct terminology when asking a question. We can also see from the code that there are a lot of syntax errors in the code, making it pretty unclear as to what exactly they want to push and to where. This means the question asker has a lot misunderstandings that need to be resolved first before asking this question. Knowing what you don't know is important because it means you can seek help on precisely the things that you need help with.
 
+Because of the ambiguity in the question, one of the answers had to guess at what the asker was trying to do, while another answer simply stated other errors in the code and how to fix them:
+
+---
+*"I think your code is all messed up in terms of variables and function, here is what I think you're trying to achieve. Is that correct?"*
+
+```javascript
+var giv = [];
+
+function output (input) {
+    giv.push(input);
+}
+
+var mes = 2;
+output(mes);
+
+mes = 3;
+output(mes);
+
+alert(giv);
 ```
-A: datetime and the datetime.timedelta classes are your friend.
+---
+*"You have to push to the correct variable name. Either rename giv to output, or use giv.push() instead. And fix the rest of the syntax errors."*
 
-1. find today
-2. use that to find the first day of this month.
-3. use timedelta to backup a single day, to the last day of the previous month.
-4. print the YYYYMM string you're looking for.
+---
 
-Like this:
-
- >>> import datetime
- >>> today = datetime.date.today()
- >>> first = datetime.date(day=1, month=today.month, year=today.year)
- >>> lastMonth = first - datetime.timedelta(days=1)
- >>> print lastMonth.strftime("%Y%m")
- 201202
- >>>
-
-```
- 
-The asker received six possible answers, and he or she was successful in inciting discussion from multiple users. The answers themselves were clear and were devoid of the rumored sarcasm and hostility of “hackers.” Since I myself have referenced this page and found it useful, I can confidently say that it is a good question.
-
-## The foolproof way to get ignored.
-
-While there are decent questions that benefit everyone, there are those one can ask to create an entirely different effect. In the following example, a user asks how he would, in short, create a desktop application with Facebook.
-
-```
-Q: Facebook Desktop Notifier
-
-I am a beginner programmer that have never used anything other than what's included in a language.
-
-I am trying to create a desktop application that notifies me anytime I get an update onfacebook. 
-How should go about doing this? Thanks in advance.
-
-edit Sorry I was not clear. Is there any way to make a DESKTOP application with facebook?
-```
-
-A simple “yes” would have answered the question, but we know that’s not the sort of answer he or she is looking for. Fortunately, someone kindly responded with a link to Facebook’s developer website. The asker should have done more research on his or her potential project. Then further down the road, he or she could have asked more specific and detailed questions that wouldn’t require a thousand-paged response for a sufficient answer.
+Because of this unclear and badly framed question, the answers are ambiguous and unclear. This shows the importance of being explicit in your question and precise and informative about your problem.
 
 ## Conclusion
 
-When we rely on others’ generosity and expertise to provide answers to our questions, it should hold that the question we ask should be one that leads to efficient and effective help that not only benefits us, but also the people we ask and others who might ask the same question in the future. Thus, if you have a question… make it a smart one! Asking questions may not always get you the best answer, but asking them in a way that will make others want to answer them will increase the success of finding a good solution and make it a positive experience on all sides.
+One thing to keep in mind when asking questions is to imagine that you are trying to answer it. If you were seeing the question through fresh eyes and no other context, think about how you would pose it. Make sure the title is clear and is relevant to the problem. Provide as much context as possible in the question (like your attempted code) so that it is clear exactly what you are trying to do, and provides a way to reproduce the problem. Describing any research you have done to try and understand the problem before asking it is also very helpful to let others know what level of understanding you are currently at. A well-thought out question will significantly increase your chances of getting you the nice, well-thought out answer you were looking for.  
