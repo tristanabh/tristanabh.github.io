@@ -19,7 +19,7 @@ Asking questions can be very important when learning something new. Just asking 
 
 This question was asked on [StackOverflow](https://stackoverflow.com/questions/2162758/how-to-print-in-c) and the person who asked this question also provided the context that they are a beginner to C and also stated how they would have done it in Java. They provided their own code that they have been working on.
 
-```C
+```c
 #include <stdio.h>
 
 int addNumbers(int a, int b)
@@ -43,11 +43,11 @@ This is a smart question because it is explicit and precise. Since they have pro
 ---
 *"For signed decimal integer output, use either the "%d" or "%i" conversion specifiers, such as"*
 
-```C
+```c
 printf("%d\n", addNumber(a,b));
 ```
 *"You can mix regular text with conversion specifiers, like so:"*
-```C
+```c
 printf("The result of addNumber(%d, %d) is %d\n", a, b, addNumber(a,b));
 ```
 ---
