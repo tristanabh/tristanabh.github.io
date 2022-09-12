@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Learning Javascript and Athletic Software Engineering | Tristan Hall | Professional Portfolio">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/tristanabh.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tristan Hall | Professional Portfolio">
+    <meta property="og:url" content="https://tristanabh.github.io/essays/javascript.html">
+    <meta property="og:title" content="Learning Javascript and Athletic Software Engineering | Tristan Hall | Professional Portfolio">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/tristanabh.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>Learning Javascript and Athletic Software Engineering | Tristan Hall | Professional Portfolio</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Tristan Hall</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/#essays">Essays</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">Learning Javascript and Athletic Software Engineering</h1>
+  <span class="date">31 Aug 2022</span>
+  <hr>
+  <!---<img width="200px" class="rounded float-start pe-4" src="../img/difficulty/degree_difficulty.jpg">--->
+
+<h2 id="initial-impressions">Initial Impressions</h2>
+
+<p>Up to this point most of my experience in programming has been in Java and a little bit of Python and C++. As such, my frame of reference for learning Javascript has been mostly with respect to Java. What sticks out to me the most in the short time that I’ve been learning Javascript (about a week) is how “simple” it feels. I’m calling it “simple” because I don’t know that have learned enough or have had enough experience with the language yet to be able to formulate a better word. This simplicity, as I have found so far, isn’t necessarily a characteristic I have enjoyed about the language.</p>
+
+<p><img width="200px" src="../img/javascript.png" /></p>
+
+<p>For example, take a function definition. In Java, the type of each parameter that the function takes must be specified, as well as the type that is returned.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Java is statically-typed</span>
+
+<span class="kt">boolean</span> <span class="nf">isOdd</span><span class="o">(</span><span class="kt">int</span> <span class="n">number</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>However, since Javascript is not a statically typed language, the parameter types and return types are not specified.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Javascript is dynamically-typed</span>
+
+<span class="kd">function</span> <span class="nx">isOdd</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The reason I say I haven’t necessarily enjoyed this aspect of javascript is because it feels less precise than what I’m used to. It feels strange to initializing a variable say, and not state what it is.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kt">double</span> <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>vs</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>From the little bit of time I’ve spent using javascript this is the most obvious difference I’ve had to get used to. I’m sure I will come across more as I use the language more.</p>
+
+<h2 id="software-engineering-perspective">Software Engineering Perspective</h2>
+
+<p>Whether javascript is a good or bad language for software engineering is not really a question I feel I have enough experience to answer. I do know that Javascript is a very popular language and therefore it must be very useful for certain types of software engineering. I think it is important to note that, at least in my opinion, one should never isolate themselves to just one language and try to use that language for as many tasks as they can. I think it is valuable to generalize as much as possible in terms of programming concepts and sort of get down to the “first principles” to become a better programmer or software engineer. For this reason I think being able to use a variety of languages and choose the language that is best equipped to accomplish the task at hand is ideal. Or at the very least having experience with many languages so that you have a strong core understanding of programming principles and strategies.</p>
+
+<h2 id="athletic-software-engineering-and-wods">Athletic Software Engineering and WODs</h2>
+
+<p>I think the idea of athletic software engineering where you have to solve a programming problem in a relatively short amount of time in the form of a WOD (workout of the day) seems to be valuable tool in learning and reinforcing concepts. It is certainly stressful as being constrained to say 7-10 minutes is not something I am used to. Granted these problems are usually somewhat simple but the difficulty comes in the time limit. I’ve found that this constraint has required me to pretty much go with the first strategy for solving the problem that comes to mind as there is no time to sit and come up with a better one. This means that essentially you must have enough experience with solving similar types of problems that the first strategy you think of <em>is</em> the best strategy.</p>
+
+<p>As is mostly the case with programming, the enjoyment comes from succeeding and finding that you now know how to solve the puzzle, at which point you feel like you’re a very good programmer. There is, however, always the next problem to humble you again.</p>
+
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
